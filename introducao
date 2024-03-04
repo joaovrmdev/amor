@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução</title>
+<style>
+    body {
+        background-color: #ffcccc;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .wrapper {
+        max-width: 800px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #typing-effect {
+        display: inline-block;
+        overflow: hidden;
+        white-space: pre-wrap; /* Permite quebras de linha */
+        border: 1px solid #333; /* Adiciona uma borda */
+        padding: 20px;
+        background-color: #fff; /* Cor de fundo semelhante a uma carta */
+        font-size: 18px;
+        animation: typing 3s steps(30, end);
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <h1>Introdução</h1>
+    <div id="typing-effect"></div>
+</div>
+
+<script>
+    const text = `Uma intodução contada por um fã
+    Sim fã!
+    Ver você empenhada sobre algo, não é perguntar "Será?"
+    E sim: "Quanto tempo falta?"
+    Sou apaixonado pela sua jornada ...
+    E por falar em paixão... 
+    Você é tão apaixonante, como apaixonada pelo que faz...
+
+    Se concentre um instante nesse momento.
+    Esse momento...
+    Os instantes antes do início, eles têm que ser degustados ... cada um deles!
+    Letra a letra, milesimo a milesimo.
+    Hoje é mais um dia da sua trajetória...
+    ... e mais um dia, eu estou orgulhoso de ti... orgulhoso!
+
+    Todo esse momento, do instante que você acordar pra frente, mantenha fixo "Eu sou incrível".
+    Não é fato novo, mas é algo escrito em rocha.
+
+    Se lembre disso!
+    Pelo novo passo em direção a algo...
+    Pela trajetória incrível...
+    Pelo coração que você tem ...
+    Por você ser ... você!
+    Tudo em você é cura.
+
+    O meu melhor trecho do dia, a minha melhor conversa e o meu maior presente.
+    Você é a história sendo escrita...
+    ...No coração de todo mundo que tem a sorte de te encontrar...
+    E será, como sempre, sorte no atendimento de alguém.
+
+    Te adoro ❤️`;
+
+    let index = 0;
+    function typeWriter() {
+        if (index < text.length) {
+            const char = text.charAt(index);
+            if (char === '\n') {
+                document.getElementById("typing-effect").innerHTML += '<br>'; // Adiciona uma quebra de linha
+            } else {
+                document.getElementById("typing-effect").innerHTML += char;
+            }
+            index++;
+            setTimeout(typeWriter, Math.floor(Math.random() * 150) + 50); // Ajuste o intervalo conforme necessário
+        }
+    }
+
+    window.onload = function() {
+        typeWriter();
+    };
+</script>
+
+</body>
+</html>
