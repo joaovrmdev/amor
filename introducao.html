@@ -42,8 +42,16 @@
 </head>
 <body>
 <div class="wrapper">
-    <h1>Introdução contada por um fã</h1>
+    <h1>Introdução</h1>
     <div id="typing-effect"></div>
+    <br> <!-- Adicione esta linha para criar uma quebra de linha -->
+    <audio id="theme-song" loop>
+        <source src="audio/liniker.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="play-audio" onclick="playAudio()" style="background-color: #f03b3b; color: white; display: bottom; padding: 10px 20px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer;">
+        <i class="fas fa-power-off" style="margin-right: 8px;"></i>Clique em mim
+    </button>
 </div>
 
 <script>
@@ -109,6 +117,12 @@
         }
     }
 
+    function playAudio() {
+        const themeSong = document.getElementById('theme-song');
+        themeSong.volume = 0.8; // Ajuste o volume conforme necessário
+        themeSong.play();
+        document.getElementById('play-audio').style.display = 'none';
+    }
     window.onload = function() {
         typeWriter();
     };
