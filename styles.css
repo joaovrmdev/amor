@@ -1,0 +1,137 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Adiciona o display flex para alinhar os conteúdos horizontalmente */
+    justify-content: center; /* Centraliza os conteúdos horizontalmente */
+    align-items: center; /* Centraliza os conteúdos verticalmente */
+    height: 100vh; /* Define a altura da página como a altura da janela do navegador */
+}
+
+#star-wars-container {
+    display: none; /* Oculta o conteúdo de Star Wars inicialmente */
+}
+
+.intro, .star-wars-intro {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.intro p {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Arial Rounded MT Bold', sans-serif; /* Fonte arredondada */
+}
+
+.star-wars-intro p {
+    font-family: 'Star Jedi', sans-serif; /* Fonte Star Wars */
+    font-size: 24px;
+}
+
+.content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 18px;
+}
+#start-button {
+    background-color: #4CAF50; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar por cima */
+    transition: background-color 0.3s; /* Transição suave da cor de fundo */
+}
+
+#start-button:hover {
+    background-color: #0c0b0b; /* Cor de fundo ao passar por cima */
+}
+
+/* Adicione estilos para o botão */
+#next-button {
+    background-color: #ba61ee; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar por cima */
+    transition: background-color 0.3s; /* Transição suave da cor de fundo */
+}
+
+#next-button:hover {
+    background-color: #0c0b0b; /* Cor de fundo ao passar por cima */
+}
+
+/* Posicionamento do botão na parte inferior da página */
+#next-screen {
+    position: fixed; /* Define o posicionamento fixo */
+    bottom: 20px; /* Distância do fundo da página */
+    left: 50%; /* Alinha o botão horizontalmente */
+    transform: translateX(-50%); /* Centraliza o botão horizontalmente */
+    z-index: 999; /* Garante que o botão esteja acima de outros elementos */
+}
+
+#love-text {
+    font-size: 20px;
+    color: #ff6;
+    overflow: hidden; /* Esconde o texto que ainda não foi animado */
+    white-space: nowrap; /* Garante que o texto seja exibido em uma linha */
+    animation: typing 5s steps(40, end), fade-in 2s ease-out 5s forwards; /* Animação de digitação e fade-in */
+}
+
+#love-text2 {
+    font-size: 20px;
+    color: #ff6;
+    overflow: hidden; /* Esconde o texto que ainda não foi animado */
+    white-space: nowrap; /* Garante que o texto seja exibido em uma linha */
+    animation: typing 5s steps(40, end), fade-in 2s ease-out 5s forwards; /* Animação de digitação e fade-in */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.question-mark {
+    animation: pulse 1s infinite alternate;
+    display: inline-block;
+    font-size: 24px;
+    color: #ff6; /* Cor amarela */
+}

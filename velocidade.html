@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>That '70s Show</title>
+<style>
+    body {
+        background-color: #f3e7d9;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('background_image.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .wrapper {
+        position: relative;
+        max-width: 800px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #bf412c;
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    #car {
+        position: relative;
+        z-index: 2;
+        max-width: 50%;
+        height: auto;
+        margin-top: 50px;
+    }
+
+    #karfundo {
+        position: bottom;
+        z-index: 1;
+        max-width: 50%;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+
+    #buy-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #bf412c;
+        color: white;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        z-index:3;
+    }
+
+    #popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 9999; /* Definindo uma alta z-index */
+    }
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <h1>Ainda abalamos em Santo André</h1>
+    
+    <img id="car" src="image/ka.png" alt="Ka rro">
+    <img id="karfundo" src="image/Blueprint Ford Ka XR 2000.png" alt="">
+</div>
+
+<audio id="theme-song" loop>
+    <source src="audio/thats a 70 show.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<button id="play-audio" onclick="playAudio()">Ligar o rádio</button>
+
+<button id="buy-button" onclick="buyButtonClick()">Comprar</button>
+
+<div id="popup">
+    <p>
+        Não, infelizmente não deu para a introdução ser em um belíssimo Ford Ka azul, porque mais difícil do que clicar no botão é achar uma dessas belezinhas no jeito de comprar e levar.
+        Mas... algumas coisas podemos falar sobre essa introdução. <a href="#" onclick="openNewPopup()">Clique aqui</a>.
+    </p>
+</div>
+
+<div id="new-popup" style="display: none;">
+    <p>
+        Sou apaixonado pela sua jornada, e sou seu fã, sempre soube que ia dar a logica no que se refere a residencia.\n
+        Você é tão apaixonante como apaixonada pelo que faz...
+        Esse momento, os instantes antes do inicio, eles tem que ser degustados ... cada um deles!
+        Hoje é mais um dia da sua trajetoria, e eu estou orgulhoso de ti... orgulhoso!
+
+        Todo esse momento, do instante que você acordar pra frente, mantenha fixo "Eu sou incrivel"
+
+        Pelo novo passo em direção a algo... 
+        Pela trajetoria incrivel...
+        Pela pessoa incrivel que você é ... 
+        Por você ser ... você!
+        Tudo em você é cura. 
+
+        O meu melhor trecho do dia, a minha melhor conversa e o meu maior presente.
+                                            Eu te amo.
+
+    </p>
+</div>
+
+<script>
+    let buyAttempts = 0;
+
+    function playAudio() {
+        const themeSong = document.getElementById('theme-song');
+        themeSong.volume = 0.8; // Ajuste o volume conforme necessário
+        themeSong.play();
+        document.getElementById('play-audio').style.display = 'none';
+    }
+
+    function buyButtonClick() {
+        buyAttempts++;
+
+        if (buyAttempts <= 2) {
+            document.getElementById('buy-button').style.right = (Math.random() * 80) + '%';
+            document.getElementById('buy-button').style.bottom = (Math.random() * 80) + '%';
+        } else if (buyAttempts === 3) {
+            document.getElementById('popup').style.display = 'block';
+        }
+    }
+
+    function openNewPopup() {
+        document.getElementById('new-popup').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

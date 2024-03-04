@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declaração para minha Namorada</title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/k.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="star-wars-audio" src="audio/star_theme.mp3" preload="auto" loop controls style="display: none;"></audio>
+    <div id="intro-container">
+        <div class="intro">
+            <p>Existem milhares de formas de se contar o começo de uma história.</p>
+            <p>Bem... Como podemos introduzir essa <span class="question-mark">?</span></p>
+            <button id="start-button">Ver abertura</button>
+        </div>
+    </div>
+    <div id="star-wars-container" style="display: none;">
+        <div class="star-wars-intro">
+            <p>Há muito tempo, em uma galáxia muito, muito distante...</p>
+        </div>
+        <div class="content">
+            <h1>Episódio 1 - A Residência Começa</h1>
+            <p id="love-text"></p>
+            <p id="love-text2"></p>
+        </div>
+    </div>
+    <div id="next-screen" style="display: none;">
+        <button id="next-button">Tentar de novo</button>
+    </div>        
+    
+    <script src="script.js"></script>
+</body>
+</html>
