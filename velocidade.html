@@ -60,10 +60,22 @@
         font-size: 18px;
         border: none;
         cursor: pointer;
-        z-index:3;
     }
 
     #popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 9999; /* Definindo uma alta z-index */
+    }
+
+    #new-popup {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -85,12 +97,10 @@
     <img id="karfundo" src="image/Blueprint Ford Ka XR 2000.png" alt="">
 </div>
 
-<audio id="theme-song" loop>
-    <source src="audio/thats a 70 show.mp3" type="audio/mpeg">
+<audio id="theme-song" autoplay loop>
+    <source src="https://drive.google.com/uc?export=download&id=1J2eCMqW6_5LLkpfcKeTL7_HD0Aqr4t_T" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
-
-<button id="play-audio" onclick="playAudio()">Ligar o rádio</button>
 
 <button id="buy-button" onclick="buyButtonClick()">Comprar</button>
 
@@ -102,35 +112,11 @@
 </div>
 
 <div id="new-popup" style="display: none;">
-    <p>
-        Sou apaixonado pela sua jornada, e sou seu fã, sempre soube que ia dar a logica no que se refere a residencia.\n
-        Você é tão apaixonante como apaixonada pelo que faz...
-        Esse momento, os instantes antes do inicio, eles tem que ser degustados ... cada um deles!
-        Hoje é mais um dia da sua trajetoria, e eu estou orgulhoso de ti... orgulhoso!
-
-        Todo esse momento, do instante que você acordar pra frente, mantenha fixo "Eu sou incrivel"
-
-        Pelo novo passo em direção a algo... 
-        Pela trajetoria incrivel...
-        Pela pessoa incrivel que você é ... 
-        Por você ser ... você!
-        Tudo em você é cura. 
-
-        O meu melhor trecho do dia, a minha melhor conversa e o meu maior presente.
-                                            Eu te amo.
-
-    </p>
+    <p>Texto do novo pop-up aqui.</p>
 </div>
 
 <script>
     let buyAttempts = 0;
-
-    function playAudio() {
-        const themeSong = document.getElementById('theme-song');
-        themeSong.volume = 0.8; // Ajuste o volume conforme necessário
-        themeSong.play();
-        document.getElementById('play-audio').style.display = 'none';
-    }
 
     function buyButtonClick() {
         buyAttempts++;
@@ -139,14 +125,4 @@
             document.getElementById('buy-button').style.right = (Math.random() * 80) + '%';
             document.getElementById('buy-button').style.bottom = (Math.random() * 80) + '%';
         } else if (buyAttempts === 3) {
-            document.getElementById('popup').style.display = 'block';
-        }
-    }
-
-    function openNewPopup() {
-        document.getElementById('new-popup').style.display = 'block';
-    }
-</script>
-
-</body>
-</html>
+            document.getEl
